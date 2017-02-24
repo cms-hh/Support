@@ -1,0 +1,89 @@
+\documentclass[usenames,dvipsnames]{beamer}
+\usepackage{default}
+\usepackage[english]{babel}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{bm} %bold math
+\usepackage{graphicx}
+\usepackage{hepnames}
+\usepackage{palatino} % CMS PAS/AN font
+
+\beamertemplatenavigationsymbolsempty
+
+\usepackage{feynmp}
+\DeclareGraphicsRule{*}{mps}{*}{}
+\makeatletter
+\def\endfmffile{%
+  \fmfcmd{\p@rcent\space the end.^^J%
+          end.^^J%
+          endinput;}%
+  \if@fmfio
+    \immediate\closeout\@outfmf
+  \fi
+  \IfFileExists{\thefmffile.mp}{\immediate\write18{mpost \thefmffile}}{}
+  \let\thefmffile\relax
+}
+\makeatother
+
+\begin{document}
+
+\begin{frame}
+\begin{center}
+\resizebox{\textwidth}{!}{
+\begin{fmffile}{ggXHH}
+\begin{fmfgraph*}(150,100)
+\fmfset{arrow_ang}{10}
+\fmfset{arrow_len}{3mm}
+\fmfset{dot_size}{1thick}
+\fmfleftn{i}{2}
+\fmfrightn{o}{2}
+\fmf{gluon, width=.5}{i1,g1}
+\fmf{gluon, width=.5}{i2,g1}
+\fmf{dashes, width=.5, label=$\rm{X}$}{g1,g2}
+\fmf{dashes, width=.5, label=$\PH$}{g2,o1}
+\fmf{dashes, width=.5, label=$\PH$}{g2,o2}
+\fmfdot{g1,g2}
+\fmflabel{$\Pg$}{i1}\fmflabel{$\Pg$}{i2}
+\end{fmfgraph*}
+\end{fmffile}
+}
+\end{center}
+\end{frame}
+
+\begin{frame}
+\begin{center}
+\resizebox{\textwidth}{!}{
+\begin{fmffile}{ggXHbbHww}
+\begin{fmfgraph*}(150,100)
+\fmfset{arrow_ang}{10}
+\fmfset{arrow_len}{3mm}
+\fmfset{dot_size}{1thick}
+\fmfleftn{i}{2}
+\fmfrightn{o}{6}
+\fmf{gluon, width=.5}{i1,g1}
+\fmf{gluon, width=.5}{i2,g1}
+\fmf{dashes, width=.5, label=$\rm{X}$}{g1,g2}
+\fmf{dashes, width=.5, label=$\PH$}{g2,g3}
+\fmf{dashes, width=.5, label=$\PH$, label.side=left}{g2,g4}
+\fmf{fermion, width=.5, tension=.3}{o1,g3,o2}
+\fmf{photon, width=.5}{x1,g4,x2}
+\fmf{fermion, width=.5}{o3,x1,o4}
+\fmf{fermion, width=.5}{o6,x2,o5}
+\fmflabel{$\Pg$}{i1}
+\fmflabel{$\Pg$}{i2}
+\fmflabel{$\APbottom$}{o1}
+\fmflabel{$\Pbottom$}{o2}
+\fmflabel{$\Plepton$}{o3}
+\fmflabel{$\Pnu$}{o4}
+\fmflabel{$\Plepton$}{o5}
+\fmflabel{$\Pnu$}{o6}
+\fmfdot{g3,x1,x2}
+\fmfblob{.06w}{g1,g2}
+\end{fmfgraph*}
+\end{fmffile}
+}
+\end{center}
+\end{frame}
+
+\end{document}

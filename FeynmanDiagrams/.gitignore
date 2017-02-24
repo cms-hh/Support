@@ -1,0 +1,21 @@
+# Feynmp stuff
+*.mp
+*.t1
+*.1
+
+# Latex stuff
+*.out
+*.log
+*.aux
+*.snm
+*.toc
+*.nav
+
+# Kile and vim backup files
+*.backup
+*.swp
+
+# xelatex & atom
+*.fls
+*.fdb_latexmk
+*.synctex.gz
