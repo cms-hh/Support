@@ -1,0 +1,186 @@
+\documentclass[usenames,dvipsnames]{beamer}
+\usepackage{default}
+\usepackage[english]{babel}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{bm} %bold math
+\usepackage{graphicx}
+\usepackage{hepnames}
+\usepackage{palatino} % CMS PAS/AN font
+
+\beamertemplatenavigationsymbolsempty
+
+\usepackage{feynmp}
+\DeclareGraphicsRule{*}{mps}{*}{}
+\makeatletter
+\def\endfmffile{%
+  \fmfcmd{\p@rcent\space the end.^^J%
+          end.^^J%
+          endinput;}%
+  \if@fmfio
+    \immediate\closeout\@outfmf
+  \fi
+  \IfFileExists{\thefmffile.mp}{\immediate\write18{mpost \thefmffile}}{}
+  \let\thefmffile\relax
+}
+\makeatother
+
+\begin{document}
+
+\begin{frame}
+\begin{center}
+\resizebox{\textwidth}{!}{
+\begin{fmffile}{ggc2H}
+\begin{fmfgraph*}(150,100)
+\fmfset{arrow_ang}{10}
+\fmfset{arrow_len}{3mm}
+\fmfset{dot_size}{1thick}
+\fmfleftn{i}{2}
+\fmfrightn{o}{2}
+\fmf{gluon, width=.5}{i1,g1}
+\fmf{gluon, width=.5}{i2,g2}
+\fmf{fermion, width=.5}{g1,g2,g3,g1}
+\fmf{dashes, width=.5, label=$\PH$}{g3,o1}
+\fmf{dashes, width=.5, label=$\PH$}{g3,o2}
+\fmfdot{g1,g2,g3}
+\fmflabel{$\Pg$}{i1}\fmflabel{$\Pg$}{i2}
+\end{fmfgraph*}
+\end{fmffile}
+}
+\end{center}
+\end{frame}
+
+\begin{frame}
+\begin{center}
+\resizebox{\textwidth}{!}{
+\begin{fmffile}{ggLoopHH}
+\begin{fmfgraph*}(150,100)
+\fmfset{arrow_ang}{10}
+\fmfset{arrow_len}{3mm}
+\fmfset{dot_size}{1thick}
+\fmfleftn{i}{2}
+\fmfrightn{o}{2}
+\fmf{gluon, width=.5}{i1,g1}
+\fmf{gluon, width=.5}{i2,g2}
+\fmf{fermion, width=.5}{g1,g2,g3,g4,g1}
+\fmf{dashes, width=.5, label=$\PH$}{g4,o1}
+\fmf{dashes, width=.5, label=$\PH$}{g3,o2}
+\fmfdot{g1,g2,g3,g4}
+\fmflabel{$\Pg$}{i1}\fmflabel{$\Pg$}{i2}
+\fmfv{label=$\Ptop,,\Pbottom$,label.angle=-45}{g2}
+\end{fmfgraph*}
+\end{fmffile}
+}
+\end{center}
+\end{frame}
+
+\begin{frame}
+\begin{center}
+\resizebox{\textwidth}{!}{
+\begin{fmffile}{ggHHH}
+\begin{fmfgraph*}(150,100)
+\fmfset{arrow_ang}{10}
+\fmfset{arrow_len}{3mm}
+\fmfset{dot_size}{1thick}
+\fmfleftn{i}{2}
+\fmfrightn{o}{2}
+\fmf{gluon, width=.5}{i1,g1}
+\fmf{gluon, width=.5}{i2,g2}
+\fmf{fermion, width=.5, tension=.5}{g1,g2,g3,g1}
+\fmf{dashes, width=.5, tension=.5, label=$\PH$}{g3,g4}
+\fmf{dashes, width=.5, label=$\PH$}{g4,o1}
+\fmf{dashes, width=.5, label=$\PH$}{g4,o2}
+\fmfdot{g1,g2,g3,g4}
+\fmflabel{$\Pg$}{i1}\fmflabel{$\Pg$}{i2}
+\fmfv{label=$\Ptop,,\Pbottom$,label.angle=180}{g3}
+\end{fmfgraph*}
+\end{fmffile}
+}
+\end{center}
+\end{frame}
+
+\begin{frame}
+\begin{center}
+\resizebox{\textwidth}{!}{
+\begin{fmffile}{VBF_VVHH}
+\begin{fmfgraph*}(150,100)
+\fmfset{arrow_ang}{10}
+\fmfset{arrow_len}{3mm}
+\fmfset{dot_size}{1thick}
+\fmfleftn{i}{2}
+\fmfrightn{o}{4}
+\fmf{fermion, width=.5, tension=2.5}{i1,g1}
+\fmf{fermion, width=.5, tension=2.5}{i2,g2}
+\fmf{fermion, width=.5}{g2,o4}
+\fmf{fermion, width=.5}{g1,o1}
+\fmf{photon, width=.5, label=$\PW,,\PZ$}{g1,g3}
+\fmf{photon, width=.5, label=$\PW,,\PZ$}{g3,g2}
+\fmf{dashes, width=.5, label=$\PH$}{g3,o2}
+\fmf{dashes, width=.5, label=$\PH$}{g3,o3}
+\fmfdot{g1,g2,g3}
+\fmflabel{$\Pq$}{i1}\fmflabel{$\Pq$}{i2}
+\fmflabel{$\Pq'$}{o1}\fmflabel{$\Pq'$}{o4}
+\end{fmfgraph*}
+\end{fmffile}
+}
+\end{center}
+\end{frame}
+
+\begin{frame}
+\begin{center}
+\resizebox{\textwidth}{!}{
+\begin{fmffile}{VBF_VVH}
+\begin{fmfgraph*}(150,100)
+\fmfset{arrow_ang}{10}
+\fmfset{arrow_len}{3mm}
+\fmfset{dot_size}{1thick}
+\fmfleftn{i}{2}
+\fmfrightn{o}{4}
+\fmf{fermion, width=.5, tension=2.5}{i1,g1}
+\fmf{fermion, width=.5, tension=2.5}{i2,g2}
+\fmf{fermion, width=.5}{g2,o4}
+\fmf{fermion, width=.5}{g1,o1}
+\fmf{photon, width=.5, label=$\PW,,\PZ$}{g1,g3}
+\fmf{photon, width=.5, label=$\PW,,\PZ$}{g3,g4}
+\fmf{photon, width=.5, label=$\PW,,\PZ$}{g4,g2}
+\fmf{dashes, width=.5, label=$\PH$}{g3,o2}
+\fmf{dashes, width=.5, label=$\PH$}{g4,o3}
+\fmfdot{g1,g2,g3,g4}
+\fmflabel{$\Pq$}{i1}\fmflabel{$\Pq$}{i2}
+\fmflabel{$\Pq'$}{o1}\fmflabel{$\Pq'$}{o4}
+\end{fmfgraph*}
+\end{fmffile}
+}
+\end{center}
+\end{frame}
+
+\begin{frame}
+\begin{center}
+\resizebox{\textwidth}{!}{
+\begin{fmffile}{VBF_VVH_HHH}
+\begin{fmfgraph*}(150,100)
+\fmfset{arrow_ang}{10}
+\fmfset{arrow_len}{3mm}
+\fmfset{dot_size}{1thick}
+\fmfleftn{i}{2}
+\fmfrightn{o}{4}
+\fmf{fermion, width=.5, tension=2.5}{i1,g1}
+\fmf{fermion, width=.5, tension=2.5}{i2,g2}
+\fmf{fermion, width=.5}{g2,o4}
+\fmf{fermion, width=.5}{g1,o1}
+\fmf{photon, width=.5, label=$\PW,,\PZ$}{g1,g3}
+\fmf{photon, width=.5, label=$\PW,,\PZ$}{g3,g2}
+\fmf{dashes, width=.5, label=$\PH$}{g3,g4}
+\fmf{dashes, width=.5, label=$\PH$}{g4,o3}
+\fmf{dashes, width=.5, label=$\PH$}{g4,o2}
+\fmfdot{g1,g2,g3,g4}
+\fmflabel{$\Pq$}{i1}\fmflabel{$\Pq$}{i2}
+\fmflabel{$\Pq'$}{o1}\fmflabel{$\Pq'$}{o4}
+\end{fmfgraph*}
+\end{fmffile}
+}
+\end{center}
+\end{frame}
+
+\end{document}
