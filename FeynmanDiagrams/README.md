@@ -1,5 +1,7 @@
 Adapt Feynman diagrams to CMS standards: capital H and c2 instead of c2t.
 
+rm gg*.*
+
 latex HH_nonresonant_EFT.tex
 
 for f in *.mp; do mpost $f; done
